@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Tamil Nadu — Tourist Places Portfolio</title>
+
+  <meta name="description" content="Digital portfolio showcasing beautiful tourist places across Tamil Nadu with real images.">
+
+  <style>
+
+    :root{--bg:#f7fbff;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
+
+    *{box-sizing:border-box}
+
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#0f172a}
+
+    .container{max-width:1100px;margin:36px auto;padding:0 20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+    .brand{display:flex;align-items:center;gap:12px}
+
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#06b6d4,#06b6d4);display:flex;align-items:center;justify-content:center;color: white ;font-weight:700}
+
+    nav a{margin-left:14px;text-decoration:none;color:inherit;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:28px;align-items:center}
+
+    .hero-card{background:var(--card);padding:28px;border-radius:14px;box-shadow:0 6px 22px rgba(2,6,23,0.06)}
+
+    .hero h1{margin:0 0 10px;font-size:28px}
+
+    .hero p{margin:0;color:var(--muted)}
+
+    .search{margin-top:18px;display:flex;gap:10px}
+
+    .search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #e6edf3}
+
+    .btn{background:var(--accent);color: white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer}
+
+    .places-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+
+    .card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.05);display:flex;flex-direction:column}
+
+    .card img{width:100%;height:160px;object-fit:cover}
+
+    .card-body{padding:14px}
+
+    .card-body h3{margin:0 0 6px;font-size:16px}
+
+    .card-body p{margin:0 0 10px;color:var(--muted);font-size:14px}
+
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+
+    .tag{background:#eef7f6;color:#054f4a;padding:6px 8px;border-radius:999px;font-size:12px}
+
+    footer{margin-top:36px;padding:18px 0;color:var(--muted);text-align:center}/* Lightbox modal */
+
+.modal{position:fixed;inset:0;background:rgba(3,7,18,0.6);display:none;align-items:center;justify-content:center;padding:20px}
+
+.modal.open{display:flex}
+
+.modal-content{max-width:900px;width:100%;background: white;border-radius:10px;overflow:hidden}
+
+.modal-content img{width:100%;height:auto;display:block}
+
+.modal-close{position:absolute;right:22px;top:22px;background:#fff;border-radius:999px;border:1px solid #eee;padding:6px 8px;cursor:pointer}
+
+/* responsive */
+
+@media (max-width:880px){.hero{grid-template-columns:1fr}}
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+
+      <div class="brand">
+
+        <div class="logo">TN</div>
+
+        <div>
+
+          <div style="font-weight:700">Tamil Nadu toriest place</div>
+
+          <div style="font-size:13px;color:var(--muted)">Exploring heritage, hills & coasts</div>
+
+        </div>
+
+      </div>
+
+      <nav>
+
+        <a href="#places">Places</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+    </header><section class="hero">
+
+  <div class="hero-card">
+
+    <h1>Discover Tamil Nadu — With Photos</h1>
+
+    <p>Curated highlights, real photos and quick guides for must-visit destinations across Tamil Nadu — tea gardens, temples, coastlines and hill stations.</p>
+
+    <div class="search">
+
+      <input id="q" placeholder="Search places (e.g., Ooty, Mahabalipuram)">
+
+      <button class="btn" onclick="filterPlaces()">Search</button>
+
+    </div>
+
+    <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap">
+
+      <div class="tag">Heritage</div>
+
+      <div class="tag">Hills</div>
+
+      <div class="tag">Beaches</div>
+
+      <div class="tag">Wildlife</div>
+
+    </div>
+
+  </div>
+
+  <aside style="align-self:start">
+
+    <div class="hero-card" style="text-align:center">
+
+      <h3>Featured: Ooty</h3>
+
+      <p style="color:var(--muted);font-size:14px">The Queen of Hill Stations — tea gardens, Nilgiri toy train, botanical gardens.</p>
+
+      <img src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Pykara-Lake-Ooty-756x420.jpg" alt="Ooty" style="width:100%;margin-top:12px;border-radius:8px;">
+
+    </div>
+
+  </aside>
+
+</section>
+
+<section id="places">
+
+  <h2 style="margin-top:28px">Popular Places (click View to enlarge)</h2>
+
+  <div class="places-grid" id="grid">
+
+    <!-- Card: Ooty -->
+
+    <article class="card" data-title="Ooty">
+
+      <img src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Pykara-Lake-Ooty-756x420.jpg" alt="Ooty">
+
+      <div class="card-body">
+
+        <h3>Ooty (Udhagamandalam)</h3>
+
+        <p>Tea estates, scenic viewpoints, Nilgiri Mountain Railway.</p>
+
+        <div class="tags"><span class="tag">Hill Station</span><span class="tag">Nature</span></div>
+
+        <div style="margin-top:10px"><button class="btn" onclick="openLightboxFromUrl('https://images.unsplash.com/photo-1508264165352-258a6ccd5e35?auto=format&fit=crop&w=1600&q=80')">View</button></div>
+
+      </div>
+
+    </article>
+
+    <!-- Card: Kodaikanal -->
+
+    <article class="card" data-title="Kodaikanal">
+
+      <img src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Upper-Lake-View-Kodaikana-768x469.jpg" alt="Kodaikanal">
+
+      <div class="card-body">
+
+        <h3>Kodaikanal</h3>
+
+        <p>Star-shaped lake, cliffs and pine-scented walks.</p>
+
+        <div class="tags"><span class="tag">Hill Station</span><span class="tag">Boating</span></div>
+
+        <div style="margin-top:10px"><button class="btn" onclick="openLightboxFromUrl('https://images.unsplash.com/photo-1526779259212-8d3d7d1c4f3f?auto=format&fit=crop&w=1600&q=80')">View</button></div>
+
+      </div>
+
+    </article>
+
+    <!-- Card: Mahabalipuram -->
+
+    <article class="card" data-title="Mahabalipuram">
+
+        <img src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Mahabalipuram-Beach-Tamil-Nadu-768x469.jpg" alt="Mahabalipuram">
+
+      <div class="card-body">
+
+        <h3>Mahabalipuram</h3>
+
+        <p>Shore Temple, rock-cut monuments and seaside sculptures.</p>
+
+        <div class="tags"><span class="tag">Heritage</span><span class="tag">Beach</span></div>
+
+        <div style="margin-top:10px"><button class="btn" onclick="openLightboxFromUrl('https://images.unsplash.com/photo-1560464024-54a1e0e8f0de?auto=format&fit=crop&w=1600&q=80')">View</button></div>
+
+      </div>
+
+    </article>
+
+    <!-- Card: Madurai -->
+
+    <article class="card" data-title="Madurai">
+
+      <img src="https://img.etimg.com/thumb/msid-115931050,width-480,height-360,imgsize-2997676,resizemode-75/meenakshi-amman-temple-madurai.jpg" alt="Madurai">
+
+      <div class="card-body">
+
+        <h3>Madurai</h3>
+
+        <p>Home to the Meenakshi Amman Temple — vibrant bazaars and classical culture.</p>
+
+        <div class="tags"><span class="tag">Temple</span><span class="tag">Culture</span></div>
+
+        <div style="margin-top:10px"><button class="btn" onclick="openLightboxFromUrl('https://images.unsplash.com/photo-1606788075760-5e6af0d3f0a9?auto=format&fit=crop&w=1600&q=80')">View</button></div>
+
+      </div>
+
+    </article>
+
+    <!-- Card: Kanyakumari -->
+
+    <article class="card" data-title="Kanyakumari">
+
+      <img src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Vivekananda-Rock-Memorial-Kanyakumari-756x420.jpg" alt="Kanyakumari">
+
+      <div class="card-body">
+
+        <h3>Kanyakumari</h3>
+
+        <p>Southern tip of India — sunrise/sunset over the confluence of three seas.</p>
+
+        <div class="tags"><span class="tag">Coast</span><span class="tag">Sunrise</span></div>
+
+        <div style="margin-top:10px"><button class="btn" onclick="openLightboxFromUrl('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80')">View</button></div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section id="gallery">
+
+  <h2 style="margin-top:28px">Gallery — Click any photo to enlarge</h2>
+
+  <p style="color:var(--muted);margin-top:6px">A small curated gallery with real photos (Unsplash). Replace these with your own for a personal portfolio.</p>
+
+  <div class="places-grid" style="margin-top:12px">
+
+    <img style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer" src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Pykara-Lake-Ooty-756x420.jpg" onclick="openLightboxFromUrl(this.src)">
+
+    <img style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer" src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Upper-Lake-View-Kodaikana-768x469.jpg" onclick="openLightboxFromUrl(this.src)">
+
+    <img style="width:100%;height:160px;object-fitpx;object-fit:cover;border-radius:10px;cursor:pointer" src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Mahabalipuram-Beach-Tamil-Nadu-768x469.jpg" onclick="openLightboxFromUrl(this.src)">
+
+    <img style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer" src="https://img.etimg.com/thumb/msid-115931050,width-480,height-360,imgsize-2997676,resizemode-75/meenakshi-amman-temple-madurai.jpg" onclick="openLightboxFromUrl(this.src)">
+
+    <img style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer" src="https://www.atlastravel.in/blog/wp-content/uploads/2018/10/Vivekananda-Rock-Memorial-Kanyakumari-756x420.jpg" onclick="openLightboxFromUrl(this.src)">
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <h2 style="margin-top:28px">Contact / Plan a Trip</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+
+    <form class="hero-card" onsubmit="event.preventDefault();alert('Thanks — form not connected in this demo.')">
+
+      <div style="display:flex;gap:10px;margin-bottom:10px">
+
+        <input name="name" placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6edf3">
+
+        <input name="email" placeholder="Email" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6edf3">
+
+      </div>
+
+      <textarea name="msg" rows="4" placeholder="Message or travel plan" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3"></textarea>
+
+      <div style="margin-top:10px;text-align:right"><button class="btn">Send</button></div>
+
+    </form>
+
+    <div class="hero-card">
+
+      <h4>Quick Info</h4>
+
+      <p style="color:var(--muted)">Best time to visit: October — March. Languages: Tamil, English. Currency: INR.</p>
+
+      <h4 style="margin-top:12px">Map</h4>
+
+      <div style="background:#eef2ff;border-radius:8px;padding:12px;text-align:center;color:var(--muted)">Map placeholder — embed Google Maps iframe here for actual use.</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <small>Built with ❤️ • Images: Unsplash (placeholders) • Replace images with your own photographs for a personal portfolio.</small>
+
+</footer>
+
+  </div>  <!-- lightbox modal -->  <div id="modal" class="modal" onclick="closeLightbox(event)">
+
+    <div class="modal-content" id="modalContent">
+
+      <button class="modal-close" onclick="closeLightbox(event)">✕</button>
+
+      <img id="modalImg" src="" alt="Preview">
+
+    </div>
+
+  </div>  <script>
+
+    function openLightboxFromUrl(url){
+
+      document.getElementById('modalImg').src = url;
+
+      document.getElementById('modal').classList.add('open');
+
+    }
+
+    function openLightbox(el){
+
+      const img = el.tagName === 'IMG' ? el.src : (el.closest('.card')?.querySelector('img')?.src || '');
+
+      if(!img) return;
+
+      openLightboxFromUrl(img);
+
+    }
+
+    function closeLightbox(e){
+
+      if(e.target.id === 'modal' || e.target.classList.contains('modal-close')){
+
+        document.getElementById('modal').classList.remove('open');
+
+        document.getElementById('modalImg').src = '';
+
+      }
+
+    }
+
+    function filterPlaces(){
+
+      const q = document.getElementById('q').value.trim().toLowerCase();
+
+      const cards = document.querySelectorAll('#grid .card');
+
+      cards.forEach(c => {
+
+        const t = c.getAttribute('data-title').toLowerCase();
+
+        c.style.display = t.includes(q) || q === '' ? '' : 'none';
+
+      });
+
+    }
+
+    // small accessibility: close modal with ESC
+
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox({target:document.getElementById('modal')}); });
+
+  </script></body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
